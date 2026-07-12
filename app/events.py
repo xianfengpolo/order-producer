@@ -6,7 +6,9 @@ class OrderFilledEvent:
     order_id: str
     user_id: str
     symbol: str
-    filled_qty: float
-    filled_price: float
-    side: str  # "buy" | "sell"
+    exec_qty: float  # renamed from filled_qty
+    exec_price: float  # renamed from filled_price
+    order_side: str  # renamed from side; values now "BUY"/"SELL" (uppercase)
     timestamp_ms: int
+    fee_asset: str  # new required field
+    fee_amount: float  # new required field
